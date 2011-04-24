@@ -4,6 +4,10 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" required for vimwiki
+set nocompatible
+
+let mapleader = ","
 syntax on
 filetype plugin indent on
 set tabstop=2
