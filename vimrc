@@ -10,9 +10,9 @@ set nocompatible
 let mapleader = ","
 syntax on
 filetype plugin indent on
-set tabstop=2
+set tabstop=4
 set smarttab
-set shiftwidth=2
+set shiftwidth=4
 set autoindent
 set cindent
 set expandtab
@@ -33,6 +33,8 @@ let g:syntastic_auto_loc_list=1
 
 " Gundo.vim plugin
 nnoremap <F5> :GundoToggle<CR>
+
+nnoremap <F6> :NERDTreeToggle<CR>
 
 " For vim 7.3
 set undofile
