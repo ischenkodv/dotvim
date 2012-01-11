@@ -29,9 +29,9 @@ endif
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 set statusline+=%t\ %y\ [%c,%l]
-"let g:syntastic_enable_signs=1
-"let g:syntastic_auto_loc_list=1
-"let g:syntastic_quiet_warnings=1
+let g:syntastic_enable_signs=0
+let g:syntastic_auto_loc_list=0
+let g:syntastic_quiet_warnings=1
 
 " Gundo.vim plugin
 nnoremap <F5> :GundoToggle<CR>
@@ -69,4 +69,12 @@ function! SummarizeTabs()
     echohl None
   endtry
 endfunction
+
+:set tags=~/.vim/tags/zf1
+
+"" Searching
+"set hlsearch                    " highlight matches
+"set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
 
