@@ -4,10 +4,19 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+let mapleader = ","
+
 " required for vimwiki
 set nocompatible
 
-let mapleader = ","
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+
 syntax on
 filetype plugin indent on
 set tabstop=4
@@ -29,9 +38,9 @@ endif
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 set statusline+=%t\ %y\ [%c,%l]
-let g:syntastic_enable_signs=0
-let g:syntastic_auto_loc_list=0
-let g:syntastic_quiet_warnings=1
+"let g:syntastic_enable_signs=0
+"let g:syntastic_auto_loc_list=0
+"let g:syntastic_quiet_warnings=1
 
 " Gundo.vim plugin
 nnoremap <F5> :GundoToggle<CR>
@@ -77,4 +86,7 @@ endfunction
 "set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+
+inoremap <silent> <buffer> <leader>dd <ESC>:call Toggle_task_status()<CR>i
+noremap <silent> <buffer> <leader>dd :call Toggle_task_status()<CR>
 
