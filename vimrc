@@ -16,6 +16,13 @@ set nocompatible
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Store temporary files in a central spot
+set backupdir=/var/tmp,/tmp
+set directory=/var/tmp,/tmp
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
 
 syntax on
 filetype plugin indent on
