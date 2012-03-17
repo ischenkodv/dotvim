@@ -64,3 +64,12 @@
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = https://github.com/edsono/vim-matchit.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "bundle/vim-aldmeris"]
+	path = bundle/vim-aldmeris
+	url = git://github.com/veloce/vim-aldmeris.git
+[submodule "bundle/vividchalk"]
+	path = bundle/vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git

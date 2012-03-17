@@ -34,10 +34,11 @@ set cindent
 set expandtab
 
 if has('gui_running')
-   set background=dark
+"  set background=dark
 "  set background=light
-"  colorscheme vividchalk
-  colorscheme solarized
+  colorscheme vividchalk
+"  colorscheme solarized
+"  colorscheme aldmeris
 endif
 
 " Syntax check plugin
