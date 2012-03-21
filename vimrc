@@ -33,6 +33,8 @@ set autoindent
 set cindent
 set expandtab
 
+autocmd FileType jade,coffee setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
 if has('gui_running')
 "  set background=dark
 "  set background=light
