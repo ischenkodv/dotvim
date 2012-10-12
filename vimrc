@@ -33,7 +33,13 @@ set autoindent
 set cindent
 set expandtab
 
-autocmd FileType jade,coffee setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType jade,coffee,yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\.swp$\|\.mo$\|^zend_cache',
+  \ }
 
 if has('gui_running')
 "  set background=dark
