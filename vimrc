@@ -13,6 +13,9 @@ set nocompatible
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Show line numbers
+set number
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
@@ -106,3 +109,16 @@ set smartcase                   " ... unless they contain at least one capital l
 inoremap <silent> <buffer> <leader>dd <ESC>:call Toggle_task_status()<CR>i
 noremap <silent> <buffer> <leader>dd :call Toggle_task_status()<CR>
 
+" Highlight 80-th column.
+if has('gui_running')
+    set colorcolumn=80
+endif
+
+
+" Splitjoin plugin bindings
+nmap <Leader>j :SplitjoinJoin<cr>
+nmap <Leader>s :SplitjoinSplit<cr>
+
+" Folding
+nnoremap <Space> za
+vnoremap <Space> za
