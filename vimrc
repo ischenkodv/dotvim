@@ -3,12 +3,22 @@
 filetype off 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
+let g:pathogen_disabled = []
+if !has('gui_running')
+    call add(g:pathogen_disabled, 'vim-airline')
+endif
 let mapleader = ","
 
 " required for vimwiki
 set nocompatible
 
+" Disable plugins
+" let g:pathogen_disabled = []
+" call add(g:pathogen_disabled, 'supertab')
+
+
+"set rtp+=/home/dima/.vim/bundle/vim-supertab
+"set rtp+=/home/dima/.vim/bundle/ultisnips
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -45,11 +55,23 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 if has('gui_running')
-"  set background=dark
-"  set background=light
-  colorscheme vividchalk
-"  colorscheme solarized
-"  colorscheme aldmeris
+  set background=dark
+  "set background=light
+  "colorscheme molokai
+  "colorscheme vividchalk
+  "colorscheme primary
+  "colorscheme solarized
+  "colorscheme luna
+  "colorscheme codeschool
+  "colorscheme jellybeans
+  "colorscheme Tomorrow-Night-Bright
+  "Replaces the Dark Red to Soft Red
+  "colorscheme symfony
+  colorscheme dracula
+  "let g:alduin_Shout_Windhelm = 1
+  "colorscheme alduin
+else
+  colorscheme Tomorrow-Night-Bright
 endif
 
 " Syntax check plugin
@@ -57,9 +79,13 @@ endif
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 set statusline+=%t\ %y\ [%c,%l]
-"let g:syntastic_enable_signs=0
+" Disable slow scanning of buffer.
+let g:syntastic_enable_signs=0
 "let g:syntastic_auto_loc_list=0
 "let g:syntastic_quiet_warnings=1
+"let g:syntastic_php_phpcs_args=""
+" Disable slow cursor movement.
+let g:syntastic_echo_current_error=0
 
 " Gundo.vim plugin
 nnoremap <F5> :GundoToggle<CR>
@@ -111,7 +137,7 @@ noremap <silent> <buffer> <leader>dd :call Toggle_task_status()<CR>
 
 " Highlight 80-th column.
 if has('gui_running')
-    set colorcolumn=80
+    "set colorcolumn=80
 endif
 
 
@@ -122,3 +148,38 @@ nmap <Leader>s :SplitjoinSplit<cr>
 " Folding
 nnoremap <Space> za
 vnoremap <Space> za
+
+autocmd Filetype java set makeprg=javac\ %
+set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+map <F9> :make<Return>:copen<Return>
+map <F10> :cprevious<Return>
+map <F11> :cnext<Return>
+
+" UltiSnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+
+au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.lsx set filetype=ls
+
+" Paste for clipboard
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
+
+"noremap <F8> :Geeknote<cr>
+
+" Highlight cursor line COMMENTED OUT BECAUSE VERY SLOW
+"augroup CursorLine
+    "au!
+    "au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    "au WinLeave * setlocal nocursorline
+"augroup End
+
+"let g:airline_powerline_fonts = 1
+"set laststatus=2
+"if !exists('g:airline_symbols')
+    "let g:airline_symbols = {}
+"endif
+"let g:airline_symbols.space = "\ua0"
