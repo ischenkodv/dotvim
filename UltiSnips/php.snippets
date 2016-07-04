@@ -1,0 +1,23 @@
+priority -50
+
+snippet gresp "Guzzle response as string"
+print_r((string) ${1:$response}->getBody());exit;
+endsnippet
+
+snippet dp_prot "Protected property with documenation" b
+/**
+ * ${2:undocumented property}
+ *
+ * @var ${3:void}
+ */
+protected $${1:name};
+endsnippet
+
+snippet dp_priv "Private property with documenation" b
+/**
+ * ${2:undocumented property}
+ *
+ * @var ${3:void}
+ */
+private $${1:name};
+endsnippet

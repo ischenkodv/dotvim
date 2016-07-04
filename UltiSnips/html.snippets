@@ -1,0 +1,33 @@
+priority -50
+
+#######################
+# ANGULAR FORM FIELDS #
+#######################
+snippet nginput "Input with Label" w
+<div class="form-group clearfix" ng-class="{'has-error': ${1}edit.${2}.$invalid}">
+	<label for="${3:$2}" class="control-label col-md-3" translate="${4}"></label>
+	<div class="col-md-9">
+		<input type="${5:text}" name="${6:$2}" class="form-control" ng-model="${7:$1}.${8:$2}">
+		<div class="error-messages" ng-messages="${9:$1}edit.${10:$2}.$error" ng-if="${11:$1}edit.${12:$2}.$touched || ${13}edit.$submitted" role="alert">
+			$0
+		</div>
+		${14:<span class="help-block">${15}</span>}
+	</div>
+</div>
+
+endsnippet
+
+snippet ngmultilang "Multilanguage text field with Label" w
+<div class="form-group clearfix" ng-class="{'has-error': ${1}edit.${2}.$invalid}">
+	<label for="${3:$2}" class="control-label col-md-3" translate="${4}"></label>
+	<div class="col-md-9">
+		<multilang-text-field name="${5:$2}" ng-model="${6:$1}.${7:$2}"></multilang-text-field>
+		${8:<div class="error-messages" ng-messages="${9:$1}edit.${10:$2}.$error" ng-if="${11:$1}edit.${12:$2}.$touched || ${13}edit.$submitted" role="alert">
+			$0
+		</div>}
+		${14:<span class="help-block">${15}</span>}
+	</div>
+</div>
+
+endsnippet
+# vim:ft=snippets:
